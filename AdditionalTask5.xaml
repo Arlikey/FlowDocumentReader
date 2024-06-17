@@ -1,0 +1,39 @@
+﻿<Window x:Class="FlowDocumentReader.AdditionalTask5"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlowDocumentReader"
+        mc:Ignorable="d"
+        Title="AdditionalTask5" Height="400" Width="600">
+    <Grid>
+        <DockPanel LastChildFill="False">
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar Name="buttonsToolBar" Band="1">
+                    <Button Name="boldButton" FontWeight="Bold" Click="BoldButton_Click">Bold</Button>
+                    <Button Name="italicButton" FontStyle="Italic" Click="ItalicButton_Click">Italic</Button>
+                    <Button Name="underlineButton" Click="UnderlineButton_Click">
+                        <TextBlock TextDecorations="Underline">Underline</TextBlock>
+                    </Button>
+                    <Button Name="clearButton" Click="ClearButton_Click">Clear</Button>
+                    <Separator/>
+                    <Label>Font size: </Label>
+                    <ComboBox Name="fontSizeComboBox" SelectionChanged="fontSizeComboBox_SelectionChanged"></ComboBox>
+                    <Separator/>
+                    <Label>Color: </Label>
+                    <ComboBox Name="fontColorComboBox" SelectionChanged="fontColorComboBox_SelectionChanged"></ComboBox>
+                </ToolBar>
+                <ToolBar Band="2">
+                    <Label>Start:</Label>
+                    <TextBox Name="startSelectionTextBox" MinWidth="20" 
+                             PreviewTextInput="NumericTextBox_PreviewTextInput">0</TextBox>
+                    <Label>End:</Label>
+                    <TextBox Name="endSelectionTextBox" MinWidth="20"
+                             PreviewTextInput="NumericTextBox_PreviewTextInput">0</TextBox>
+                </ToolBar>
+            </ToolBarTray>
+            <RichTextBox Name="userTextBox"></RichTextBox>
+        </DockPanel>
+        
+    </Grid>
+</Window>
